@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -18,15 +19,16 @@ public class PlayerController : MonoBehaviour
     public float playerHeight;
     public LayerMask isGround;
     bool grounded;
-
-    public Transform direction;
-
+    
     float horizontalInput;
     float verticalInput;
 
     Vector3 moveDirection;
 
+    public Transform direction;
     Rigidbody rb;
+
+    private bool isReloading;
     
     private void Start()
     {
@@ -50,11 +52,27 @@ public class PlayerController : MonoBehaviour
         {
             rb.drag = 0;
         }
+        //reloading movespeed bonus testing
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            isReloading = true;
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            isReloading = false;
+        }
     }
 
     private void FixedUpdate()
     {
-        MovePlayer();
+        if (isReloading)
+        {
+            MovePlayer(moveSpeed * 5);
+        }
+        else
+        {
+            MovePlayer(moveSpeed);
+        }
     }
 
     private void MyInput() 
@@ -72,7 +90,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void MovePlayer() 
+    private void MovePlayer(float moveSpeed) 
     {
         moveDirection = transform.forward * verticalInput + transform.right * horizontalInput;
 

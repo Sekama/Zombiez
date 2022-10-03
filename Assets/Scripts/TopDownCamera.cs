@@ -23,8 +23,7 @@ public class TopDownCamera : MonoBehaviour
    public GameObject topDownCam;
    
     private void Start() {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        Debug.Log("Press R to simulate reloading speed bonus, press E to turn it off");
     }
 
     private void Update()
