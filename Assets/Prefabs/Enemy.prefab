@@ -50,7 +50,7 @@ BoxCollider:
   m_GameObject: {fileID: 859371661818652798}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -89,7 +89,7 @@ Transform:
   - {fileID: 1234635363112700083}
   - {fileID: 3609045255610450300}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!136 &1237398119903459740
 CapsuleCollider:
@@ -174,8 +174,9 @@ MonoBehaviour:
   chaseSpeed: 3
   roamSpeed: 2
   hasAttacked: 0
-  attackDelay: 0
-  attackBox: {fileID: 0}
+  attackDelay: 1
+  attackBox: {fileID: 7439331055269223959}
+  animator: {fileID: 0}
 --- !u!1001 &1237398120464286787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -230,6 +231,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4030099304566000, guid: 0e2c74548f9e2284aa68e9dc8544219c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 95855963295257474, guid: 0e2c74548f9e2284aa68e9dc8544219c, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: cf9f3729db6334646a847c05fd2176bd, type: 2}
+    - target: {fileID: 95855963295257474, guid: 0e2c74548f9e2284aa68e9dc8544219c, type: 3}
+      propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
+using UnityEngine.Animations;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class EnemyAI : MonoBehaviour
     public bool hasAttacked;
     public float attackDelay;
     public BoxCollider attackBox;
+
+    public Animator animator;
     
     
     private void Awake()
@@ -32,6 +35,7 @@ public class EnemyAI : MonoBehaviour
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         attackBox = GetComponentInChildren<BoxCollider>();
+        animator = GetComponentInChildren<Animator>();
         pauseTime = pauseTime = Random.Range(1, 3);
         continueAggro = false;
     }
@@ -48,7 +52,10 @@ public class EnemyAI : MonoBehaviour
         if (playerInSightRange)
             continueAggro = true;
         if (!playerInAggroRange)
+        {
             continueAggro = false;
+            animator.SetBool("isChasing", false);
+        }
         
         if (!playerInSightRange && !playerInAttackRange && !continueAggro) Roaming();
         if (continueAggro && !hasAttacked) ChasePlayer();
@@ -62,13 +69,19 @@ public class EnemyAI : MonoBehaviour
         if (!walkPointSet) SearchWalkPoint();
 
         if (walkPointSet)
+        {
             agent.SetDestination(walkPoint);
-
+            animator.SetBool("isWalking", true);
+        }
+        
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
-        if (distanceToWalkPoint.magnitude < 1f)
+        if (distanceToWalkPoint.magnitude < 1f) 
+        {
             walkPointSet = false;
-
+            animator.SetBool("isWalking", false);
+        }
+        
         lastAction = Time.time;
     }
 
@@ -87,6 +100,8 @@ public class EnemyAI : MonoBehaviour
     private void ChasePlayer()
     {
         agent.speed = chaseSpeed;
+        animator.SetBool("isWalking", false);
+        animator.SetBool("isChasing", true);
         agent.SetDestination(player.position);
     }
 
@@ -97,6 +112,7 @@ public class EnemyAI : MonoBehaviour
         if (!hasAttacked)
         {
             attackBox.enabled = true;
+            animator.SetBool("isAttacking", true);
             
             hasAttacked = true;
             Invoke(nameof(ResetAttack), attackDelay);
@@ -106,6 +122,7 @@ public class EnemyAI : MonoBehaviour
     private void ResetAttack()
     {
         attackBox.enabled = false;
+        animator.SetBool("isAttacking", false);
         hasAttacked = false;
     }
 }
