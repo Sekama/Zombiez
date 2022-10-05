@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7439331055269223959}
   m_Layer: 0
   m_Name: AttackBox
-  m_TagString: Untagged
+  m_TagString: AttackBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,7 +89,7 @@ Transform:
   - {fileID: 1234635363112700083}
   - {fileID: 3609045255610450300}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!136 &1237398119903459740
 CapsuleCollider:
@@ -173,6 +173,9 @@ MonoBehaviour:
   pauseTime: 0
   chaseSpeed: 3
   roamSpeed: 2
+  hasAttacked: 0
+  attackDelay: 0
+  attackBox: {fileID: 0}
 --- !u!1001 &1237398120464286787
 PrefabInstance:
   m_ObjectHideFlags: 0

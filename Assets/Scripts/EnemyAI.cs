@@ -21,12 +21,17 @@ public class EnemyAI : MonoBehaviour
     public float lastAction, pauseTime;
     public float chaseSpeed;
     public float roamSpeed;
+
+    public bool hasAttacked;
+    public float attackDelay;
+    public BoxCollider attackBox;
     
     
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        attackBox = GetComponentInChildren<BoxCollider>();
         pauseTime = pauseTime = Random.Range(1, 3);
         continueAggro = false;
     }
@@ -46,7 +51,7 @@ public class EnemyAI : MonoBehaviour
             continueAggro = false;
         
         if (!playerInSightRange && !playerInAttackRange && !continueAggro) Roaming();
-        if (continueAggro) ChasePlayer();
+        if (continueAggro && !hasAttacked) ChasePlayer();
         if (playerInAttackRange && playerInSightRange) AttackPlayer();
 
     }
@@ -88,6 +93,19 @@ public class EnemyAI : MonoBehaviour
     private void AttackPlayer()
     {
         agent.SetDestination(transform.position);
-        
+
+        if (!hasAttacked)
+        {
+            attackBox.enabled = true;
+            
+            hasAttacked = true;
+            Invoke(nameof(ResetAttack), attackDelay);
+        }
+    }
+
+    private void ResetAttack()
+    {
+        attackBox.enabled = false;
+        hasAttacked = false;
     }
 }

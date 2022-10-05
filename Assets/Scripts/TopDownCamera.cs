@@ -9,19 +9,12 @@ public class TopDownCamera : MonoBehaviour
      
    [Header("References")]
    public Transform direction;
-   //public Transform player;
-   //public Transform playerModel;
-   //public Rigidbody rb;
-
-  // public float rotationSpeed;
 
    public Camera cam;
    
    private Vector3 movement;
    private Vector3 mousePos;
-   
-   //public GameObject topDownCam;
-  
+
     private void Update()
     {
         Ray mouseRay = cam.ScreenPointToRay(Input.mousePosition);
