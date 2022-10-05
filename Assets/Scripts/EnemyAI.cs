@@ -88,5 +88,6 @@ public class EnemyAI : MonoBehaviour
     private void AttackPlayer()
     {
         agent.SetDestination(transform.position);
+        
     }
 }
