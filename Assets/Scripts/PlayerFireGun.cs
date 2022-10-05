@@ -16,9 +16,10 @@ public class PlayerFireGun : MonoBehaviour
     public int maxAmmo;
     [SerializeField] private int currentAmmo;
     public float reloadTime;
-    [SerializeField] private bool isReloading;
-    
-    [Header("Object Parameters")]
+    public bool isReloading;
+
+    [Header("Object Parameters")] 
+    public GameObject player;
     public GameObject weaponHolder;
     public TrailRenderer bulletTrail;
 
@@ -65,19 +66,19 @@ public class PlayerFireGun : MonoBehaviour
     void Shoot()
     {
         currentAmmo  --;
-        Ray ray = new Ray(weaponHolder.transform.position, weaponHolder.transform.forward);
+        Ray ray = new Ray(player.transform.position, player.transform.forward);
         RaycastHit hit;
         destination = ray.GetPoint(range);
 
         if (Physics.Raycast(ray, out hit))
         {
             destination = hit.point;
-            Debug.DrawLine(weaponHolder.transform.position, destination, Color.green, 1f);
+            Debug.DrawLine(player.transform.position, destination, Color.green, 1f);
         }
         else
         {
             destination = ray.GetPoint(range);
-            Debug.DrawLine(weaponHolder.transform.position, ray.GetPoint(range), Color.green, 1f);
+            Debug.DrawLine(player.transform.position, ray.GetPoint(range), Color.green, 1f);
         }
 
         InstantiateProjectile(weaponHolder.transform);

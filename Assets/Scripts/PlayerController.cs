@@ -28,11 +28,12 @@ public class PlayerController : MonoBehaviour
     public Transform direction;
     Rigidbody rb;
 
-    private bool isReloading;
-    
+    private PlayerFireGun playerFireGun;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        playerFireGun = GetComponent<PlayerFireGun>();
         rb.freezeRotation = true;
         readyToJump = true;
     }
@@ -52,20 +53,11 @@ public class PlayerController : MonoBehaviour
         {
             rb.drag = 0;
         }
-        //reloading movespeed bonus testing
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            isReloading = true;
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            isReloading = false;
-        }
     }
 
     private void FixedUpdate()
     {
-        if (isReloading)
+        if (playerFireGun.isReloading)
         {
             MovePlayer(moveSpeed * 5);
         }
