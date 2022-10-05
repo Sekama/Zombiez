@@ -30,10 +30,13 @@ public class PlayerController : MonoBehaviour
 
     private PlayerFireGun playerFireGun;
 
+    public Animator animator;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         playerFireGun = GetComponent<PlayerFireGun>();
+        animator = GetComponentInChildren<Animator>();
         rb.freezeRotation = true;
         readyToJump = true;
     }
@@ -44,6 +47,7 @@ public class PlayerController : MonoBehaviour
 
         MyInput();
         SpeedControl();
+        AnimationControl();
 
         if (grounded) 
         {
@@ -118,4 +122,16 @@ public class PlayerController : MonoBehaviour
     {
         readyToJump = true;
     }
+
+    private void AnimationControl()
+    {
+        if (horizontalInput != 0 || verticalInput != 0)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
+}
 }
