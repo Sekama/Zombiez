@@ -339,7 +339,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c7c0c7eb27da93345abc4a13786d131f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -436,7 +436,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c7c0c7eb27da93345abc4a13786d131f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -556,29 +556,65 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 392068967}
+    - target: {fileID: 1653918413125767474, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
+      propertyPath: m_YAxis.Value
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1653918413125767477, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
       propertyPath: m_LocalPosition.y
       value: 12.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1653918413125767477, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653918413234470931, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653918413234470931, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653918413234470931, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.86272925
+      objectReference: {fileID: 0}
     - target: {fileID: 1653918413234470931, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.50566626
+      value: 0.5056662
       objectReference: {fileID: 0}
     - target: {fileID: 1653918413234470931, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -4.059459e-15
+      value: -0.00000003636132
       objectReference: {fileID: 0}
     - target: {fileID: 1653918413234470931, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 3.2503602e-15
+      value: 0.000000021312236
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653918414010748695, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653918414010748695, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653918414010748695, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.88052815
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653918414010748695, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.4739939
       objectReference: {fileID: 0}
     - target: {fileID: 1653918414010748695, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000021426327
+      value: -0.00000002143775
       objectReference: {fileID: 0}
     - target: {fileID: 1653918414010748695, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000011533929
+      value: 0.000000011540078
       objectReference: {fileID: 0}
     - target: {fileID: 1653918414056989124, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
       propertyPath: m_Name
@@ -633,16 +669,24 @@ PrefabInstance:
       value: 12.5
       objectReference: {fileID: 0}
     - target: {fileID: 1653918414232493557, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653918414232493557, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.87178427
       objectReference: {fileID: 0}
     - target: {fileID: 1653918414232493557, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.48988998
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653918414232493557, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000052318732
+      value: 0.000000026686765
       objectReference: {fileID: 0}
     - target: {fileID: 1653918414232493557, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00000002939996
+      value: -0.000000014996347
       objectReference: {fileID: 0}
     - target: {fileID: 1653918414232493559, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
       propertyPath: rb
@@ -661,16 +705,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1653918414253836662, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8717843
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653918414253836662, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.48988998
+      value: 0.48988995
       objectReference: {fileID: 0}
     - target: {fileID: 1653918414253836662, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000052318732
+      value: 0.000000006095969
       objectReference: {fileID: 0}
     - target: {fileID: 1653918414253836662, guid: 4ebe1fe302566dc4099301bff7733bfc, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00000002939996
+      value: -0.0000000034255656
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

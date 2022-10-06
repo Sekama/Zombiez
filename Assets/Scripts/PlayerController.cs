@@ -32,11 +32,14 @@ public class PlayerController : MonoBehaviour
 
     public Animator animator;
 
+    public TrailRenderer speedTrail;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         playerFireGun = GetComponent<PlayerFireGun>();
         animator = GetComponentInChildren<Animator>();
+        speedTrail = GetComponentInChildren<TrailRenderer>();
         rb.freezeRotation = true;
         readyToJump = true;
     }
@@ -64,10 +67,12 @@ public class PlayerController : MonoBehaviour
         if (playerFireGun.isReloading)
         {
             MovePlayer(moveSpeed * 5);
+            speedTrail.enabled = true;
         }
         else
         {
             MovePlayer(moveSpeed);
+            speedTrail.enabled = false;
         }
     }
 
