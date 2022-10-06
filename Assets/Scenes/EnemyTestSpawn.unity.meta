@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/EnemyTestSpawn.unity.meta
 guid: 21f069779fe5c4c41a82ff834b2a5547
+========
+guid: 66a4510002db0ae4e933ed64c7445ef5
+folderAsset: yes
+>>>>>>>> Systems:Assets/Animations.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
