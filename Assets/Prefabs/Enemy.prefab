@@ -89,7 +89,7 @@ Transform:
   - {fileID: 1234635363112700083}
   - {fileID: 3609045255610450300}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!136 &1237398119903459740
 CapsuleCollider:
@@ -149,16 +149,16 @@ MonoBehaviour:
     m_Bits: 64
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
-  sightRange: 5
+  sightRange: 7.5
   attackRange: 0.75
-  aggroRange: 7.5
+  aggroRange: 10
   playerInSightRange: 0
   playerInAttackRange: 0
   playerInAggroRange: 0
   continueAggro: 0
   lastAction: 0
   pauseTime: 0
-  chaseSpeed: 3
+  chaseSpeed: 4
   roamSpeed: 2
   hasAttacked: 0
   attackDelay: 1
@@ -177,6 +177,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  animator: {fileID: 0}
+  enemyAI: {fileID: 0}
+  capsuleCollider: {fileID: 0}
 --- !u!1001 &1237398120464286787
 PrefabInstance:
   m_ObjectHideFlags: 0

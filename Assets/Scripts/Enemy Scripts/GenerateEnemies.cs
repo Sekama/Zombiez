@@ -20,8 +20,8 @@ public class GenerateEnemies : MonoBehaviour
     {
         while (enemyCount < maxEnemies)
         {
-            xPos = gameObject.transform.position.x + Random.Range(1, 12);
-            zPos = gameObject.transform.position.z + Random.Range(16, 1);
+            xPos = gameObject.transform.position.x + Random.Range(-12, 12);
+            zPos = gameObject.transform.position.z + Random.Range(-12, 12);
             Instantiate(theEnemy, new Vector3(xPos, 0, zPos), Quaternion.identity);
             yield return new WaitForSeconds(0.1f);
             enemyCount += 1;
