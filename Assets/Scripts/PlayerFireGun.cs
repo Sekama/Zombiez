@@ -85,10 +85,10 @@ public class PlayerFireGun : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            Target target = hit.transform.GetComponent<Target>();
-            if (target != null)
+            ZombieHealth zombieHealth = hit.transform.GetComponent<ZombieHealth>();
+            if (zombieHealth != null)
             {
-                target.TakeDamage(damage);
+                zombieHealth.TakeDamage(damage);
             }
         }
     }
