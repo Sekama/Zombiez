@@ -7,9 +7,10 @@ public class GenerateEnemies : MonoBehaviour
 
 
     public GameObject theEnemy;
-    public int xPos;
-    public int zPos;
+    public float xPos;
+    public float zPos;
     public int enemyCount;
+    public int maxEnemies;
    
     void Start()
     {
@@ -17,10 +18,10 @@ public class GenerateEnemies : MonoBehaviour
     }
     IEnumerator EnemyDrop()
     {
-        while (enemyCount < 10)
+        while (enemyCount < maxEnemies)
         {
-            xPos = Random.Range(1, 12);
-            zPos = Random.Range(16, 1);
+            xPos = gameObject.transform.position.x + Random.Range(1, 12);
+            zPos = gameObject.transform.position.z + Random.Range(16, 1);
             Instantiate(theEnemy, new Vector3(xPos, 0, zPos), Quaternion.identity);
             yield return new WaitForSeconds(0.1f);
             enemyCount += 1;
