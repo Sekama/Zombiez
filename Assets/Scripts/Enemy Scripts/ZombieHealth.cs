@@ -12,7 +12,7 @@ public class ZombieHealth : MonoBehaviour
 
     private void Start() 
     {
-        health = Random.Range(1,4);
+        health = Random.Range(1,3);
         animator = GetComponentInChildren<Animator>();
         enemyAI = GetComponent<EnemyAI>();
         capsuleCollider = GetComponent<CapsuleCollider>();

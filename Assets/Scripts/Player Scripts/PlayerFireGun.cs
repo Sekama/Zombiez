@@ -22,6 +22,7 @@ public class PlayerFireGun : MonoBehaviour
     public GameObject player;
     public GameObject weaponHolder;
     public TrailRenderer bulletTrail;
+    public ParticleSystem muzzleFlash;
 
     private Vector3 destination;
     private float trailSpeed = 250f;
@@ -48,6 +49,7 @@ public class PlayerFireGun : MonoBehaviour
         {
             nextTimeToFire = Time.time + 1f / fireRate;
             Shoot();
+            muzzleFlash.Play();
         }
     }
 
