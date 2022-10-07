@@ -6,7 +6,7 @@ public class KeyGate : MonoBehaviour
 {
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.name == "Player One" && GameVariables.keyCount == 2)
+        if (collider.gameObject.tag == "Player" && GameVariables.keyCount == 2)
         {
             GameVariables.keyCount--;
 
