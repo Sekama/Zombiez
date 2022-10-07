@@ -26,10 +26,16 @@ public class PlayerFireGun : MonoBehaviour
 
     private Vector3 destination;
     private float trailSpeed = 250f;
+
+    private UIManager uiManager;
     
     private void Start()
     {
         currentAmmo = maxAmmo;
+
+        uiManager = GameObject.Find("PlayerUI").GetComponent<UIManager>();
+
+         uiManager.UpdateAmmo(currentAmmo);
     }
 
     void Update()
@@ -63,6 +69,7 @@ public class PlayerFireGun : MonoBehaviour
             yield return new WaitForSeconds(reloadTime);
         }
 
+        uiManager.UpdateAmmo(currentAmmo);
         isReloading = false;
     }
     void Shoot()
@@ -71,6 +78,7 @@ public class PlayerFireGun : MonoBehaviour
         Ray ray = new Ray(player.transform.position, player.transform.forward);
         RaycastHit hit;
         destination = ray.GetPoint(range);
+        uiManager.UpdateAmmo(currentAmmo);
 
         if (Physics.Raycast(ray, out hit))
         {
