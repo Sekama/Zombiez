@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class KeyGate : MonoBehaviour
 {
-    void OnTriggerEnter(Collider collider)
+ 
+    void OnCollisionEnter(Collision collision)
     {
-        if (collider.gameObject.tag == "Player" && GameVariables.keyCount == 2)
+        if (collision.gameObject.tag == "Player" && KeyCount.keyAmount == 3)
         {
-            GameVariables.keyCount--;
+            KeyCount.keyAmount--;
 
             Destroy(gameObject);
         }
