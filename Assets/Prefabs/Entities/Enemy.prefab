@@ -149,9 +149,9 @@ MonoBehaviour:
     m_Bits: 64
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
-  sightRange: 7.5
+  sightRange: 10
   attackRange: 0.75
-  aggroRange: 10
+  aggroRange: 12.5
   playerInSightRange: 0
   playerInAttackRange: 0
   playerInAggroRange: 0
