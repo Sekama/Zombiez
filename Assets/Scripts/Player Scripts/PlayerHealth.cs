@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private float maxHealth;
     [SerializeField] private float currentHealth;
-    
+    [SerializeField] private GameObject gameOverScreen;
     
     private void Start() 
     {
@@ -29,7 +29,8 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0 )
         {
-            Destroy(gameObject);
+            gameOverScreen.SetActive(true);
+
         }
     }
 }
